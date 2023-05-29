@@ -39,6 +39,33 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="time" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/team1"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/TeamA_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text=""
+        android:inputType="number" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/team2"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/TeamB_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text=""
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView_sections"

@@ -1,15 +1,22 @@
 <resources>
-<!--    主界面-->
+    <!--    主界面-->
     <string name="app_name">篮球计分器</string>
     <string name="create_game">创建比赛</string>
     <string name="my_record">比赛记录</string>
 
-<!--    创建界面-->
+    <!--    创建界面-->
     <string name="date">比赛日期</string>
     <string name="time">比赛时间</string>
     <string name="sections">比赛节数</string>
     <string name="bonus">犯满次数</string>
     <string name="player_number">每队人数</string>
+    <string name="three_point">3分</string>
+    <string name="two_point">2分</string>
+    <string name="one_point">1分</string>
+    <string name="foul">犯规</string>
+    <string name="round">节数：</string>
+    <string name="team1">队伍1</string>
+    <string name="team2">队伍2</string>
 
 
 </resources>
