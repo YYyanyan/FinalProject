@@ -96,20 +96,19 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="left"
-
                 android:text="0"
                 android:textColor="#F44336"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/isBonus"
+                android:id="@+id/A_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="left"
                 android:text=""
                 android:textColor="#F44336"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/threeA"
@@ -190,14 +189,14 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/BisBonus"
+                android:id="@+id/B_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="left"
                 android:text=""
                 android:textColor="#F44336"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/threeB"
