@@ -34,11 +34,11 @@
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/editTextTime"
+        android:id="@+id/game_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="time" />
+        android:bufferType="normal" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,8 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text=""
-        android:inputType="number" />
+        android:text="" />
 
     <TextView
         android:layout_width="match_parent"
@@ -64,11 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text=""
-        android:inputType="number" />
+        android:text="" />
 
     <TextView
-        android:id="@+id/textView_sections"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sections"
@@ -83,7 +80,6 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView_bonus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/bonus"
@@ -99,14 +95,13 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/player_number"
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/player_number"
+        android:id="@+id/player_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:bufferType="normal"
@@ -116,6 +111,7 @@
 
     <Button
         android:id="@+id/commit_btn"
+        android:onClick="create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create_game" />

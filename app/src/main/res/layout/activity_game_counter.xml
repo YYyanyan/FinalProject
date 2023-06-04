@@ -18,9 +18,9 @@
         <TextView
             android:layout_width="74dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
+            android:layout_weight="1"
             android:gravity="right|center"
-            android:text="@string/round"
+            android:text="第"
             android:textColor="#110101"
             android:textSize="30dp">
 
@@ -28,14 +28,28 @@
         </TextView>
 
         <TextView
-            android:id="@+id/round"
+            android:id="@+id/cur_section"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="left|center"
+            android:gravity="center"
             android:text="1"
             android:textColor="#110101"
-            android:textSize="30dp"></TextView>
+            android:textSize="30dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="节"
+            android:textColor="#110101"
+            android:textSize="30dp">
+
+
+        </TextView>
+
 
 
     </LinearLayout>
@@ -59,7 +73,7 @@
 
 
             <TextView
-                android:id="@+id/teamA"
+                android:id="@+id/TeamA_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -147,7 +161,7 @@
 
 
             <TextView
-                android:id="@+id/teamB"
+                android:id="@+id/TeamB_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
