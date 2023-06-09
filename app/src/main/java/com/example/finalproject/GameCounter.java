@@ -23,6 +23,7 @@ public class GameCounter extends AppCompatActivity {
     TextView foulB;
     TextView A_full_foul;
     TextView B_full_foul;
+    TextView cur_section;
     private static final String TAG = "GameCounter";
 
     @Override
@@ -30,7 +31,7 @@ public class GameCounter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_counter);
 
-        // 接收数据
+        // 接收创建界面数据
         team1 = findViewById(R.id.TeamA_name);
         team2 = findViewById(R.id.TeamB_name);
         Intent intent = getIntent();
@@ -50,9 +51,6 @@ public class GameCounter extends AppCompatActivity {
         Log.i(TAG, "onActivityResult: edit_sections =" + edit_sections);
         Log.i(TAG, "onActivityResult: edit_bonus =" + edit_bonus);
         Log.i(TAG, "onActivityResult: edit_player_num =" + edit_player_num);
-
-
-
 
     }
     public void click(View btn){
@@ -104,6 +102,7 @@ public class GameCounter extends AppCompatActivity {
 
     }
     public void reset(View reset){
+
         scoreA.setText("0");
         scoreB.setText("0");
         Log.i(TAG, "reset: " + "0");

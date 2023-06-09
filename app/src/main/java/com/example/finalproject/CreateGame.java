@@ -67,9 +67,6 @@ public class CreateGame extends AppCompatActivity {
         GameCounterActivity.putExtra("bonus",Integer.parseInt(bonus));
         GameCounterActivity.putExtra("player_num",Integer.parseInt(player_num));
 
-        setResult(6,GameCounterActivity);
-        finish();
-
         startActivity(GameCounterActivity);
 
     }

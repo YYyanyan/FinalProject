@@ -246,11 +246,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
-            android:id="@+id/round_end"
+            android:id="@+id/section_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="本节结束" />
+            android:text="本节结束"
+            android:onClick="reset"
+            />
 
         <Button
             android:id="@+id/game_end"
