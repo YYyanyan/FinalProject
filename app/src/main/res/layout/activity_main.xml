@@ -36,7 +36,8 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create" />
+        app:layout_constraintTop_toBottomOf="@+id/create"
+        android:onClick="record"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

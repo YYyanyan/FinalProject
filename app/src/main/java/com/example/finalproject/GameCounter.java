@@ -196,29 +196,43 @@ public class GameCounter extends AppCompatActivity {
             Log.i(TAG, "save_sec_Data: data :" + data);
 
 //            //传输数据到GameData
-//            Intent GameDataActivity = new Intent(this,GameList.class);
+//            Intent GameDataActivity = new Intent(this,MainActivity.class);
 //            Bundle bundle = new Bundle();
 //            Integer i =1;
 //            for (ArrayList<String> dataitem : data) {
+//                Log.i(TAG, "saveData: dataitem :" + dataitem );
 //                bundle.putStringArrayList(i.toString(), dataitem);
 //                i+=1;
 //            }
 //            GameDataActivity.putExtras(bundle);
-////            setResult(1,GameDataActivity);
-//
-//            //传输数据到GameList
-//            Intent GameListActivity = new Intent(this,GameList.class);
-//            ArrayList<String> game= new ArrayList<String>();
-//            game.add(game_date);
-//            game.add(game_time);
-//            game.add(TeamA_name);
-//            game.add(TeamB_name);
-//            game.add(scoreA_num.toString());
-//            game.add(scoreB_num.toString());
-//            GameListActivity.putExtra("gameResult",game);
-//            startActivity(GameListActivity);
-////            setResult(2,GameListActivity);
-//
+//            setResult(1,GameDataActivity);
+
+            //传输GameList数据
+            Intent GameListActivity = new Intent(this,MainActivity.class);
+            ArrayList<String> game= new ArrayList<>();
+            game.add(game_date);
+            game.add(game_time);
+            game.add(TeamA_name);
+            game.add(TeamB_name);
+            game.add(scoreA_num.toString());
+            game.add(scoreB_num.toString());
+            Log.i(TAG, "saveData: game :" + game);
+            GameListActivity.putExtra("gameResult",game);
+
+
+            //传输GameData数据
+            Bundle bundle = new Bundle();
+            Integer i =1;
+            for (ArrayList<String> dataitem : data) {
+                Log.i(TAG, "saveData: dataitem :" + dataitem );
+                bundle.putStringArrayList(i.toString(), dataitem);
+                i+=1;
+            }
+            GameListActivity.putExtras(bundle);
+
+            startActivity(GameListActivity);
+//            setResult(2,GameListActivity);
+
         }else{
             Toast.makeText(this, "比赛还未结束", Toast.LENGTH_LONG).show();
             return;
