@@ -134,8 +134,12 @@ public class GameCounter extends AppCompatActivity {
         } else if (cur_section_num<edit_sections) {
             Log.i(TAG, "save_sec_Data: 上一节A分数 ：" +data.get(cur_section_num-2).get(1));
             Log.i(TAG, "save_sec_Data: 上一节B分数 ：" +data.get(cur_section_num-2).get(2));
-            Integer cur_scoreA = scoreA_num-Integer.parseInt(data.get(cur_section_num-2).get(1));
-            Integer cur_scoreB = scoreB_num-Integer.parseInt(data.get(cur_section_num-2).get(2));
+            Integer cur_scoreA= scoreA_num;
+            Integer cur_scoreB = scoreB_num;
+            for(int i =0;i<cur_section_num-1;i++){
+                cur_scoreA = cur_scoreA-Integer.parseInt(data.get(i).get(1));
+                cur_scoreB = cur_scoreB-Integer.parseInt(data.get(i).get(2));
+            }
             sec_result.add(cur_section_num.toString());
             sec_result.add(cur_scoreA.toString());
             sec_result.add(cur_scoreB.toString());
@@ -172,8 +176,12 @@ public class GameCounter extends AppCompatActivity {
         if(cur_section_num==edit_sections) {
             ArrayList<String>  sec_result = new ArrayList<>();
             ArrayList<String> final_result = new ArrayList<>();
-            Integer cur_scoreA = scoreA_num-Integer.parseInt(data.get(cur_section_num-2).get(1));
-            Integer cur_scoreB = scoreB_num-Integer.parseInt(data.get(cur_section_num-2).get(2));
+            Integer cur_scoreA= scoreA_num;
+            Integer cur_scoreB = scoreB_num;
+            for(int i =0;i<cur_section_num-1;i++){
+                cur_scoreA = cur_scoreA-Integer.parseInt(data.get(i).get(1));
+                cur_scoreB = cur_scoreB-Integer.parseInt(data.get(i).get(2));
+            }
             sec_result.add(cur_section_num.toString());
             sec_result.add(cur_scoreA.toString());
             sec_result.add(cur_scoreB.toString());
