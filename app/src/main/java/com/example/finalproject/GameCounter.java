@@ -8,6 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameCounter extends AppCompatActivity {
     String game_date;
@@ -24,6 +28,13 @@ public class GameCounter extends AppCompatActivity {
     TextView A_full_foul;
     TextView B_full_foul;
     TextView cur_section;
+
+    public List<List> data;
+    public Integer cur_section_num;
+    public Integer scoreA_num;
+    public Integer scoreB_num;
+    public Integer foul_num_A;
+    public Integer foul_num_B;
     private static final String TAG = "GameCounter";
 
     @Override
@@ -61,10 +72,12 @@ public class GameCounter extends AppCompatActivity {
         foulB = findViewById(R.id.foul_num_B);
         A_full_foul = findViewById(R.id.A_full_foul);
         B_full_foul = findViewById(R.id.B_full_foul);
-        Integer scoreA_num = Integer.parseInt(scoreA.getText().toString());
-        Integer scoreB_num = Integer.parseInt(scoreB.getText().toString());
-        Integer foul_num_A = Integer.parseInt(foulA.getText().toString());
-        Integer foul_num_B = Integer.parseInt(foulB.getText().toString());
+        cur_section = findViewById(R.id.cur_section);
+        cur_section_num = Integer.parseInt(cur_section.getText().toString());
+        scoreA_num = Integer.parseInt(scoreA.getText().toString());
+        scoreB_num = Integer.parseInt(scoreB.getText().toString());
+        foul_num_A = Integer.parseInt(foulA.getText().toString());
+        foul_num_B = Integer.parseInt(foulB.getText().toString());
 
         if(btn.getId() == R.id.threeA ){
             scoreA_num += 3;
@@ -101,11 +114,34 @@ public class GameCounter extends AppCompatActivity {
 
 
     }
-    public void reset(View reset){
+    public void saveData(View reset){
+        //保存本节数据
+        List<String> sec_result = null;
+        if( cur_section_num ==1){
+            sec_result.add(cur_section_num.toString());
+            sec_result.add(scoreA_num.toString());
+            sec_result.add(scoreB_num.toString());
+            data.add(sec_result);
+        } else if (cur_section_num<edit_sections) {
+            Integer cur_scoreA = scoreA_num-Integer.parseInt(data.get(-1).get(1).toString());
+            Integer cur_scoreB = scoreB_num-Integer.parseInt(data.get(-1).get(2).toString());
+            sec_result.add(cur_section_num.toString());
+            sec_result.add(cur_scoreA.toString());
+            sec_result.add(cur_scoreB.toString());
+            data.add(sec_result);
+        }
 
-        scoreA.setText("0");
-        scoreB.setText("0");
-        Log.i(TAG, "reset: " + "0");
+
+        //更改节数
+        Log.i(TAG, "saveData: " + sec_result.toString());
+        if(cur_section_num<edit_sections) {
+            cur_section_num += 1;
+            cur_section.setText(cur_section_num.toString());
+        }else{
+            Toast.makeText(this, "已经是最后一节，请点击结束比赛", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Log.i(TAG, "saveData: cur_section : " + cur_section.toString());
 
     }
 

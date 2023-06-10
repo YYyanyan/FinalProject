@@ -251,7 +251,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="本节结束"
-            android:onClick="reset"
+            android:onClick="saveData"
             />
 
         <Button
