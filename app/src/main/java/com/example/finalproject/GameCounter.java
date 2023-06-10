@@ -16,6 +16,8 @@ import java.util.List;
 public class GameCounter extends AppCompatActivity {
     String game_date;
     String game_time;
+    String TeamA_name;
+    String TeamB_name;
     TextView team1;
     TextView team2;
     Integer edit_sections;
@@ -29,7 +31,7 @@ public class GameCounter extends AppCompatActivity {
     TextView B_full_foul;
     TextView cur_section;
 
-    public List<List> data;
+    public List<ArrayList> data;
     public Integer cur_section_num;
     public Integer scoreA_num;
     public Integer scoreB_num;
@@ -48,9 +50,9 @@ public class GameCounter extends AppCompatActivity {
         Intent intent = getIntent();
         game_date = intent.getStringExtra("game_date");
         game_time = intent.getStringExtra("game_time");
-        String TeamA_name = intent.getStringExtra("TeamA_name");
+        TeamA_name = intent.getStringExtra("TeamA_name");
         team1.setText(TeamA_name);
-        String TeamB_name = intent.getStringExtra("TeamB_name");
+        TeamB_name = intent.getStringExtra("TeamB_name");
         team2.setText(TeamB_name);
         edit_sections = intent.getIntExtra("sections",0);
         edit_bonus = intent.getIntExtra("bonus",0);
@@ -114,9 +116,9 @@ public class GameCounter extends AppCompatActivity {
 
 
     }
-    public void saveData(View reset){
+    public void save_sec_Data(View reset){
         //保存本节数据
-        List<String> sec_result = null;
+        ArrayList<String> sec_result = null;
         if( cur_section_num ==1){
             sec_result.add(cur_section_num.toString());
             sec_result.add(scoreA_num.toString());
@@ -130,10 +132,9 @@ public class GameCounter extends AppCompatActivity {
             sec_result.add(cur_scoreB.toString());
             data.add(sec_result);
         }
-
+        Log.i(TAG, "save_sec_Data: " + sec_result.toString());
 
         //更改节数
-        Log.i(TAG, "saveData: " + sec_result.toString());
         if(cur_section_num<edit_sections) {
             cur_section_num += 1;
             cur_section.setText(cur_section_num.toString());
@@ -141,10 +142,60 @@ public class GameCounter extends AppCompatActivity {
             Toast.makeText(this, "已经是最后一节，请点击结束比赛", Toast.LENGTH_LONG).show();
             return;
         }
-        Log.i(TAG, "saveData: cur_section : " + cur_section.toString());
+        Log.i(TAG, "save_sec_Data: cur_section : " + cur_section.toString());
+
+    }
+
+    public void saveData(View view){
+        //保存最后一节及总分数据
+        Log.i(TAG, "saveData: scoreA = " + scoreA_num.toString());
+        Log.i(TAG, "saveData: scoreB = " + scoreB_num.toString());
+        if(cur_section_num==edit_sections) {
+            ArrayList<String>  sec_result = new ArrayList<>();
+            ArrayList<String> final_result = new ArrayList<>();
+            Integer cur_scoreA = scoreA_num-Integer.parseInt(data.get(-1).get(1).toString());
+            Integer cur_scoreB = scoreB_num-Integer.parseInt(data.get(-1).get(2).toString());
+            sec_result.add(cur_section_num.toString());
+            sec_result.add(cur_scoreA.toString());
+            sec_result.add(cur_scoreB.toString());
+            data.add(sec_result);
+            final_result.add("f");
+            final_result.add(scoreA_num.toString());
+            final_result.add(scoreB_num.toString());
+            data.add(final_result);
+
+            //传输数据到GameData
+            Intent GameDataActivity = new Intent(this,GameList.class);
+            Bundle bundle = new Bundle();
+            Integer i =1;
+            for (ArrayList<String> dataitem : data) {
+                bundle.putStringArrayList(i.toString(), dataitem);
+                i+=1;
+            }
+            GameDataActivity.putExtras(bundle);
+//            setResult(1,GameDataActivity);
+
+            //传输数据到GameList
+            Intent GameListActivity = new Intent(this,GameList.class);
+            ArrayList<String> game= new ArrayList<String>();
+            game.add(game_date);
+            game.add(game_time);
+            game.add(TeamA_name);
+            game.add(TeamB_name);
+            game.add(scoreA_num.toString());
+            game.add(scoreB_num.toString());
+            GameListActivity.putExtra("gameResult",game);
+//            setResult(2,GameListActivity);
+
+        }else{
+            Toast.makeText(this, "比赛还未结束", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+    }
+
 
     }
 
 
 
-}

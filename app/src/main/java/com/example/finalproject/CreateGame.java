@@ -57,8 +57,6 @@ public class CreateGame extends AppCompatActivity {
 
         //传输数据
         Intent GameCounterActivity = new Intent(this,GameCounter.class);
-        //用Bundle放入数据到Intent
-        GameCounterActivity.putExtra("game_date", game_date);
         GameCounterActivity.putExtra("game_date",game_date);
         GameCounterActivity.putExtra("game_time",game_time);
         GameCounterActivity.putExtra("TeamA_name",TeamA_name);
