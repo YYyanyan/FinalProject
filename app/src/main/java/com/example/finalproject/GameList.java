@@ -23,6 +23,7 @@ public class GameList extends ListActivity {
         Intent data = new Intent();
         result = data.getStringArrayListExtra("gameResult");
         Log.i(TAG, "onActivityResult: result = " + result.toString());
+        //生成列表
         initListView();
     }
 
