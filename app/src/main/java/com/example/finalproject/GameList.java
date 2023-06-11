@@ -30,14 +30,6 @@ public class GameList extends ListActivity implements AdapterView.OnItemClickLis
         result = new ArrayList<>();
         result = data.getStringArrayListExtra("gameResult");
 
-//        SharedPreferences sharedPreferences = getSharedPreferences("mygame", GameCounter.MODE_PRIVATE);
-//        result = new ArrayList<>();
-//        try{
-//            result = (ArrayList<String>) sharedPreferences.getStringSet("mygame", null);
-//            Log.i(TAG, "onCreate: result:" + result);
-//        } catch (Exception e) {
-//            Toast.makeText(this, "暂无比赛数据", Toast.LENGTH_SHORT).show();
-//        }
 
         //生成列表
         initListView();
@@ -58,6 +50,8 @@ public class GameList extends ListActivity implements AdapterView.OnItemClickLis
         //接收比赛统计数据
         Intent data = getIntent();
         Bundle bundle = data.getExtras();
+        ArrayList<Integer> stat = data.getIntegerArrayListExtra("gameStat");
+        Log.i(TAG, "record: stat : "+ stat);
         Log.i(TAG, "record: bundle(): " + bundle.getStringArrayList("1"));
         Log.i(TAG, "onItemClick: section:" + bundle.getString("section"));
 
@@ -67,6 +61,7 @@ public class GameList extends ListActivity implements AdapterView.OnItemClickLis
         Log.i(TAG, "onItemClick: result:" +result);
         dataActivity.putExtra("team1",result.get(2));
         dataActivity.putExtra("team2",result.get(3));
+        dataActivity.putExtra("gameStat",stat);
         dataActivity.putExtras(bundle);
         startActivity(dataActivity);
 //        startActivity(calActivity);

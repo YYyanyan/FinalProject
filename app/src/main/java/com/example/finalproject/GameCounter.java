@@ -41,6 +41,16 @@ public class GameCounter extends AppCompatActivity {
     public Integer scoreB_num;
     public Integer foul_num_A;
     public Integer foul_num_B;
+
+    public Integer ThreePoint_A=0;
+    public Integer ThreePoint_B=0;
+    public Integer TwoPoint_A=0;
+    public Integer TwoPoint_B=0;
+    public Integer OnePoint_A=0;
+    public Integer OnePoint_B=0;
+    public Integer TotalFoul_A=0;
+    public Integer TotalFoul_B=0;
+
     private static final String TAG = "GameCounter";
 
     @Override
@@ -72,7 +82,7 @@ public class GameCounter extends AppCompatActivity {
         data = new ArrayList<>();
     }
     public void click(View btn){
-        //实现计数功能
+        //实现记录比分功能及单项数据统计功能
         scoreA = findViewById(R.id.scoreA);
         scoreB = findViewById(R.id.scoreB);
         foulA = findViewById(R.id.foul_num_A);
@@ -90,27 +100,35 @@ public class GameCounter extends AppCompatActivity {
         if(btn.getId() == R.id.threeA ){
             scoreA_num += 3;
             scoreA.setText(String.valueOf(scoreA_num));
+            ThreePoint_A +=1;
         }else if(btn.getId() == R.id.twoA ){
             scoreA_num += 2;
             scoreA.setText(String.valueOf(scoreA_num));
+            TwoPoint_A +=1;
         }else if(btn.getId() == R.id.oneA ){
             scoreA_num += 1;
             scoreA.setText(String.valueOf(scoreA_num));
+            OnePoint_A+=1;
         }else if(btn.getId() == R.id.threeB ){
             scoreB_num += 3;
             scoreB.setText(String.valueOf(scoreB_num));
+            ThreePoint_B+=1;
         }else if(btn.getId() == R.id.twoB ){
             scoreB_num += 2;
             scoreB.setText(String.valueOf(scoreB_num));
+            TwoPoint_B+=1;
         }else if(btn.getId() == R.id.oneB ){
             scoreB_num += 3;
             scoreB.setText(String.valueOf(scoreB_num));
+            OnePoint_B+=1;
         } else if(btn.getId() == R.id.foulA ){
             foul_num_A += 1;
             foulA.setText(String.valueOf(foul_num_A));
+            TotalFoul_A+=1;
         } else if(btn.getId() == R.id.foulB ){
             foul_num_B += 1;
             foulB.setText(String.valueOf(foul_num_B));
+            TotalFoul_B+=1;
         }
 
         if (foul_num_A>=edit_bonus){
@@ -199,19 +217,8 @@ public class GameCounter extends AppCompatActivity {
             data.add(final_result);
             Log.i(TAG, "save_sec_Data: data :" + data);
 
-//            //传输数据到GameData
-//            Intent GameDataActivity = new Intent(this,MainActivity.class);
-//            Bundle bundle = new Bundle();
-//            Integer i =1;
-//            for (ArrayList<String> dataitem : data) {
-//                Log.i(TAG, "saveData: dataitem :" + dataitem );
-//                bundle.putStringArrayList(i.toString(), dataitem);
-//                i+=1;
-//            }
-//            GameDataActivity.putExtras(bundle);
-//            setResult(1,GameDataActivity);
 
-            //传输GameList数据
+            //比赛列表数据
             Intent GameListActivity = new Intent(this,MainActivity.class);
             ArrayList<String> game= new ArrayList<>();
             game.add(game_date);
@@ -222,18 +229,8 @@ public class GameCounter extends AppCompatActivity {
             game.add(scoreB_num.toString());
             Log.i(TAG, "saveData: game :" + game);
 
-//            SaveArrayList.saveArrayList(GameCounter.this, game, "start");//存储arraylist在本地
-//            Context ctx = GameCounter.this;
-//            SharedPreferences sharedPreferences = ctx.getSharedPreferences("mygame", MODE_PRIVATE);
-//            SharedPreferences.Editor editor = sharedPreferences.edit();
-//            editor.putStringSet("mygame", (Set<String>) game);
-//            editor.commit();
-//            Log.i(TAG, "saveData: 数据已保存到sharedPreferences");
 
-//            GameListActivity.putExtra("gameResult",game);
-
-
-            //传输GameData数据
+            //比分数据
             Bundle bundle = new Bundle();
             bundle.putString("section",edit_sections.toString());
             Integer i =1;
@@ -242,7 +239,21 @@ public class GameCounter extends AppCompatActivity {
                 bundle.putStringArrayList(i.toString(), dataitem);
                 i+=1;
             }
+            //统计数据
+            ArrayList<Integer> stat = new ArrayList<>();
+            stat.add(ThreePoint_A);
+            stat.add(ThreePoint_B);
+            stat.add(TwoPoint_A);
+            stat.add(TwoPoint_B);
+            stat.add(OnePoint_A);
+            stat.add(OnePoint_B);
+            stat.add(TotalFoul_A);
+            stat.add(TotalFoul_B);
+            Log.i(TAG, "saveData: stat:" + stat);
+
+            //传输
             GameListActivity.putExtras(bundle);
+            GameListActivity.putExtra("gameStat",stat);
             GameListActivity.putExtra("gameResult",game);
             startActivity(GameListActivity);
 //            setResult(2,GameListActivity);

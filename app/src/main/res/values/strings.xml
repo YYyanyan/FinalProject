@@ -21,5 +21,11 @@
     <!--    计分界面-->
     <string name="fullfoul">已犯满</string>
 
+<!--    比赛数据界面-->
+    <string name="ThreePoint">三分球</string>
+    <string name="TwoPoint">两分球</string>
+    <string name="OnePoint">罚球</string>
+    <string name="TotalFoul">总犯规数</string>
+
 
 </resources>

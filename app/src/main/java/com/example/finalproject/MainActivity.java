@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public ArrayList<String> result;
+    public ArrayList<Integer> stat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,14 @@ public class MainActivity extends AppCompatActivity {
         //接收比赛统计数据
         Intent data = getIntent();
         Bundle bundle = data.getExtras();
+        stat = data.getIntegerArrayListExtra("gameStat");
+        Log.i(TAG, "record: stat : "+ stat);
         Log.i(TAG, "record: bundle(): " + bundle.getStringArrayList("1"));
 
         //打开比赛记录窗口并传输比赛数据
         Intent recordActivity = new Intent(this,GameList.class);
-//        recordActivity.putExtra("gameResult",result);
+        recordActivity.putExtra("gameResult",result);
+        recordActivity.putExtra("gameStat",stat);
         recordActivity.putExtras(bundle);
         startActivity(recordActivity);
     }
