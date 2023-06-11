@@ -61,9 +61,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#F3F4EC"
-                android:gravity="center|top"
-                android:padding="10sp"
+                android:gravity="center"
+                android:padding="5sp"
                 android:text="TIME"
+                android:textColor="#A09F9F"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F3F4EC"
+                android:gravity="center|top"
+                android:text="type"
                 android:textColor="#A09F9F"
                 android:textSize="15sp" />
 

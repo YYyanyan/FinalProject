@@ -33,6 +33,7 @@ public class MyAdapter extends ArrayAdapter {
         TextView Team2 = itemView.findViewById(R.id.Team2);
         TextView score1 = itemView.findViewById(R.id.Score1);
         TextView score2 = itemView.findViewById(R.id.Score2);
+        TextView type = itemView.findViewById(R.id.type);
 
         gameDate.setText(result.get(0));
         gameTime.setText(result.get(1));
@@ -40,6 +41,7 @@ public class MyAdapter extends ArrayAdapter {
         Team2.setText(result.get(3));
         score1.setText(result.get(4));
         score2.setText(result.get(5));
+        type.setText(result.get(6) + "v" +result.get(6));
 
         Log.i(TAG, "getView: gameDate" + gameDate.getText());
         Log.i(TAG, "getView: gameTime" + gameTime.getText());
@@ -47,6 +49,7 @@ public class MyAdapter extends ArrayAdapter {
         Log.i(TAG, "getView: Team2" + Team2.getText());
         Log.i(TAG, "getView: score1" + score1.getText());
         Log.i(TAG, "getView: score2" + score2.getText());
+        Log.i(TAG, "getView: type:" + type.getText());
 
 
 

@@ -7,9 +7,48 @@
     tools:context=".GameCounter">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|bottom"
+            android:text="date"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|bottom"
+            android:textSize="20sp"
+            android:text="time" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center|bottom"
+            android:text="type" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="100sp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,14 +94,13 @@
         </TextView>
 
 
-
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:layout_marginBottom="100dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,9 +136,9 @@
                 android:id="@+id/foul_num_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
                 android:background="#F5DDDD"
                 android:gravity="left"
-                android:layout_marginHorizontal="20dp"
                 android:text="0"
                 android:textColor="#F44336"
                 android:textSize="30sp" />
@@ -109,10 +147,10 @@
                 android:id="@+id/A_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F5DDDD"
-                android:gravity="left"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="40dp"
+                android:background="#F5DDDD"
+                android:gravity="left"
                 android:text=""
                 android:textColor="#F44336"
                 android:textSize="20sp" />
@@ -188,8 +226,8 @@
                 android:id="@+id/foul_num_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F5DDDD"
                 android:layout_marginHorizontal="20dp"
+                android:background="#F5DDDD"
                 android:gravity="left"
                 android:text="0"
                 android:textColor="#F44336"
@@ -199,10 +237,10 @@
                 android:id="@+id/B_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="40dp"
                 android:background="#F5DDDD"
                 android:gravity="left"
-                android:layout_marginBottom="40dp"
-                android:layout_marginHorizontal="20dp"
                 android:text=""
                 android:textColor="#F44336"
                 android:textSize="20sp" />
@@ -246,6 +284,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="100sp"
         android:orientation="horizontal"
@@ -259,18 +298,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="本节结束"
             android:onClick="save_sec_Data"
-            />
+            android:text="本节结束" />
 
         <Button
             android:id="@+id/game_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="全场结束"
             android:onClick="saveData"
-            />
+            android:text="全场结束" />
     </LinearLayout>
 
 

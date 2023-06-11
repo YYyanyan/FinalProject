@@ -24,6 +24,9 @@ public class GameCounter extends AppCompatActivity {
     String TeamB_name;
     TextView team1;
     TextView team2;
+    TextView date;
+    TextView time;
+    TextView type;
     Integer edit_sections;
     Integer edit_bonus;
     Integer edit_player_num;
@@ -61,16 +64,25 @@ public class GameCounter extends AppCompatActivity {
         // 接收创建界面数据
         team1 = findViewById(R.id.TeamA_name);
         team2 = findViewById(R.id.TeamB_name);
+        date = findViewById(R.id.date);
+        time = findViewById(R.id.time);
+        type = findViewById(R.id.type);
+
         Intent intent = getIntent();
         game_date = intent.getStringExtra("game_date");
         game_time = intent.getStringExtra("game_time");
-        TeamA_name = intent.getStringExtra("TeamA_name");
-        team1.setText(TeamA_name);
-        TeamB_name = intent.getStringExtra("TeamB_name");
-        team2.setText(TeamB_name);
         edit_sections = intent.getIntExtra("sections",0);
         edit_bonus = intent.getIntExtra("bonus",0);
         edit_player_num = intent.getIntExtra("player_num",0);
+        TeamA_name = intent.getStringExtra("TeamA_name");
+        TeamB_name = intent.getStringExtra("TeamB_name");
+        team1.setText(TeamA_name);
+        team2.setText(TeamB_name);
+        date.setText(game_date);
+        time.setText(game_time);
+        type.setText(edit_player_num.toString() + "v" + edit_player_num.toString() );
+
+
         Log.i(TAG, "onActivityResult: game_date =" + game_date);
         Log.i(TAG, "onActivityResult: game_time =" + game_time);
         Log.i(TAG, "onActivityResult: TeamA_name =" + TeamA_name);
@@ -83,6 +95,7 @@ public class GameCounter extends AppCompatActivity {
     }
     public void click(View btn){
         //实现记录比分功能及单项数据统计功能
+
         scoreA = findViewById(R.id.scoreA);
         scoreB = findViewById(R.id.scoreB);
         foulA = findViewById(R.id.foul_num_A);
@@ -227,6 +240,7 @@ public class GameCounter extends AppCompatActivity {
             game.add(TeamB_name);
             game.add(scoreA_num.toString());
             game.add(scoreB_num.toString());
+            game.add(edit_player_num.toString());
             Log.i(TAG, "saveData: game :" + game);
 
 
