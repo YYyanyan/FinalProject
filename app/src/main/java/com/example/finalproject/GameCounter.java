@@ -131,7 +131,7 @@ public class GameCounter extends AppCompatActivity {
             scoreB.setText(String.valueOf(scoreB_num));
             TwoPoint_B+=1;
         }else if(btn.getId() == R.id.oneB ){
-            scoreB_num += 3;
+            scoreB_num += 1;
             scoreB.setText(String.valueOf(scoreB_num));
             OnePoint_B+=1;
         } else if(btn.getId() == R.id.foulA ){
