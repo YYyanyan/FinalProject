@@ -2,7 +2,10 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class GameCounter extends AppCompatActivity {
     String game_date;
@@ -217,11 +221,21 @@ public class GameCounter extends AppCompatActivity {
             game.add(scoreA_num.toString());
             game.add(scoreB_num.toString());
             Log.i(TAG, "saveData: game :" + game);
-            GameListActivity.putExtra("gameResult",game);
+
+//            SaveArrayList.saveArrayList(GameCounter.this, game, "start");//存储arraylist在本地
+//            Context ctx = GameCounter.this;
+//            SharedPreferences sharedPreferences = ctx.getSharedPreferences("mygame", MODE_PRIVATE);
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            editor.putStringSet("mygame", (Set<String>) game);
+//            editor.commit();
+//            Log.i(TAG, "saveData: 数据已保存到sharedPreferences");
+
+//            GameListActivity.putExtra("gameResult",game);
 
 
             //传输GameData数据
             Bundle bundle = new Bundle();
+            bundle.putString("section",edit_sections.toString());
             Integer i =1;
             for (ArrayList<String> dataitem : data) {
                 Log.i(TAG, "saveData: dataitem :" + dataitem );
@@ -229,7 +243,7 @@ public class GameCounter extends AppCompatActivity {
                 i+=1;
             }
             GameListActivity.putExtras(bundle);
-
+            GameListActivity.putExtra("gameResult",game);
             startActivity(GameListActivity);
 //            setResult(2,GameListActivity);
 

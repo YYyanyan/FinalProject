@@ -4,12 +4,15 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +29,16 @@ public class GameList extends ListActivity implements AdapterView.OnItemClickLis
         Intent data = getIntent();
         result = new ArrayList<>();
         result = data.getStringArrayListExtra("gameResult");
-        Log.i(TAG, "GameList: result = " + result);
+
+//        SharedPreferences sharedPreferences = getSharedPreferences("mygame", GameCounter.MODE_PRIVATE);
+//        result = new ArrayList<>();
+//        try{
+//            result = (ArrayList<String>) sharedPreferences.getStringSet("mygame", null);
+//            Log.i(TAG, "onCreate: result:" + result);
+//        } catch (Exception e) {
+//            Toast.makeText(this, "暂无比赛数据", Toast.LENGTH_SHORT).show();
+//        }
+
         //生成列表
         initListView();
         //执行单击任务
@@ -47,6 +59,7 @@ public class GameList extends ListActivity implements AdapterView.OnItemClickLis
         Intent data = getIntent();
         Bundle bundle = data.getExtras();
         Log.i(TAG, "record: bundle(): " + bundle.getStringArrayList("1"));
+        Log.i(TAG, "onItemClick: section:" + bundle.getString("section"));
 
         //打开新窗口
         Intent dataActivity = new Intent(this,GameData.class);

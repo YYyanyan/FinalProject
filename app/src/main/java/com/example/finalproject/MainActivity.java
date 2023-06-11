@@ -4,7 +4,9 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         result = list.getStringArrayListExtra("gameResult");
         Log.i(TAG, "GameList: result = " + result);
 
+
         //接收比赛统计数据
         Intent data = getIntent();
         Bundle bundle = data.getExtras();
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         //打开比赛记录窗口并传输比赛数据
         Intent recordActivity = new Intent(this,GameList.class);
-        recordActivity.putExtra("gameResult",result);
+//        recordActivity.putExtra("gameResult",result);
         recordActivity.putExtras(bundle);
         startActivity(recordActivity);
     }
