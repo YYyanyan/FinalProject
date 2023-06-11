@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10sp"
+    android:background="#CEEDF1"
     android:orientation="vertical"
     tools:context=".GameData">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10sp"
+        android:layout_margin="15sp"
         android:layout_weight="3"
         android:background="#D2EBF7"
         android:orientation="horizontal">
@@ -37,6 +37,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="team1"
+                android:textColor="#010F5E"
                 android:textSize="15sp" />
 
             <TextView
@@ -46,6 +47,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="team2"
+                android:textColor="#010F5E"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -67,7 +69,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="第1节"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t1r1"
@@ -76,7 +78,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/t2r1"
@@ -85,7 +87,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -100,7 +102,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="第2节"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t1r2"
@@ -109,7 +111,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/t2r2"
@@ -118,7 +120,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -134,7 +136,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="第3节"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t1r3"
@@ -143,7 +145,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/t2r3"
@@ -152,7 +154,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -168,7 +170,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="第4节"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t1r4"
@@ -177,7 +179,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/t2r4"
@@ -186,7 +188,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="/"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -203,7 +205,7 @@
                     android:background="#A5D4F9"
                     android:gravity="center"
                     android:text="总分"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t1score"
@@ -230,7 +232,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20sp"
+        android:layout_margin="15sp"
         android:layout_weight="1"
         android:background="#E9F1F2"
         android:orientation="horizontal">
@@ -300,7 +302,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="team1"
-                    android:textSize="20sp" />
+                    android:textColor="#010F5E"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/Team1_three"
@@ -352,7 +355,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="team2"
-                    android:textSize="20sp" />
+                    android:textColor="#010F5E"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/Team2_three"

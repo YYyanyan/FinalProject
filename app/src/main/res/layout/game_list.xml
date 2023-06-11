@@ -3,13 +3,15 @@
     android:layout_width="wrap_content"
     android:layout_height="150sp"
     android:layout_margin="30dp"
-    android:background="#D5D6C9"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
+        android:layout_margin="20sp"
         android:layout_weight="1"
+        android:background="#EFECCB"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -32,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="score1"
-                android:textSize="50sp" />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#F3F4EC"
-                android:gravity="center"
+                android:gravity="center|top"
+                android:padding="10sp"
                 android:text="TIME"
                 android:textColor="#A09F9F"
                 android:textSize="15sp" />
@@ -87,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="score2"
-                android:textSize="50sp" />
+                android:textSize="40sp" />
         </LinearLayout>
 
     </LinearLayout>

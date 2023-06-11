@@ -19,6 +19,7 @@
             android:layout_width="74dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#E5F7F9"
             android:gravity="right|center"
             android:text="第"
             android:textColor="#110101"
@@ -32,16 +33,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#E5F7F9"
             android:gravity="center"
             android:text="1"
             android:textColor="#110101"
             android:textSize="30dp">
 
         </TextView>
+
         <TextView
             android:layout_width="74dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#E5F7F9"
             android:gravity="left|center"
             android:text="节"
             android:textColor="#110101"
@@ -94,8 +98,9 @@
                 android:id="@+id/foul_num_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:background="#F5DDDD"
                 android:gravity="left"
+                android:layout_marginHorizontal="20dp"
                 android:text="0"
                 android:textColor="#F44336"
                 android:textSize="30sp" />
@@ -104,8 +109,10 @@
                 android:id="@+id/A_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:background="#F5DDDD"
                 android:gravity="left"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="40dp"
                 android:text=""
                 android:textColor="#F44336"
                 android:textSize="20sp" />
@@ -181,9 +188,9 @@
                 android:id="@+id/foul_num_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:background="#F5DDDD"
+                android:layout_marginHorizontal="20dp"
                 android:gravity="left"
-
                 android:text="0"
                 android:textColor="#F44336"
                 android:textSize="30sp" />
@@ -192,8 +199,10 @@
                 android:id="@+id/B_full_foul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:background="#F5DDDD"
                 android:gravity="left"
+                android:layout_marginBottom="40dp"
+                android:layout_marginHorizontal="20dp"
                 android:text=""
                 android:textColor="#F44336"
                 android:textSize="20sp" />
