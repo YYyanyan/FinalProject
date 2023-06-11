@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="40sp"
+    android:paddingVertical="40sp"
+    tools:context=".CreateGame">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/game_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bufferType="normal"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textView_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/game_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bufferType="normal"
+            android:ems="10" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/team1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/TeamA_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/team2"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/TeamB_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sections"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/sections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="节数应小于等于4"
+            android:inputType="number"
+            android:text="4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bonus"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/bonus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bufferType="normal"
+            android:ems="10"
+            android:inputType="number"
+            android:text="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/player_number"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/player_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bufferType="normal"
+            android:ems="10"
+            android:inputType="number"
+            android:text="5" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/commit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="create"
+        android:text="@string/create_game" />
+
+</LinearLayout>
